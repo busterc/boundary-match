@@ -1,6 +1,6 @@
 # boundary-match [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-> Regex string match that honors boundaries for targets prepended and/or appended with non-word characters.
+> Regex string match and replace that honors boundaries for targets prepended and/or appended with non-word characters.
 
 ## Installation
 
@@ -23,11 +23,18 @@ boundaryMatch('(HotDog)', '(hotdog)', 'i');
 // => null
 '(HotDog)'.match(new RegExp('\\b\\(hotdog\\)\\b', 'i'));
 // => null
+
+// When matching isn't enough... `replace`
+let matched = boundaryMatch('Gimme a (HotDog)', '(HOTDOG)', 'i');
+boundaryMatch.replace(matched, 'Chili Dog!');
+// => Gimme a Chili Dog!
 ```
 
 ## API
 
 ### `boundaryMatch(string, target[, flags])`
+
+If the `target` is found in the `string`, it returns an `Array` containing the entire matched target as the first element; an `index` property for the start of the match; and an `input` property that contains the entire `string`. If there were no matches, `null` is returned.
 
 * #### `string`
   * `Required` : `String` the string to be searched.
@@ -36,6 +43,15 @@ boundaryMatch('(HotDog)', '(hotdog)', 'i');
 * #### `flags`
   * `Optional` : `String` can have any combination of the following values:
     * `i` : ignore case
+
+### `boundaryMatch.replace(match, target)`
+
+Returns a `String` that replaces the found `match` results with `target`
+
+* #### `match`
+  * `Required` : `Array` the result of previously calling `boundaryMatch`
+* #### `target`
+  * `Required` : `String` the string that replaces the found match
 
 ## TODO
 

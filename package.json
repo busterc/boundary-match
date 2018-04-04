@@ -1,7 +1,7 @@
 {
   "name": "boundary-match",
   "description":
-    "Regex string match that honors boundaries for targets prepended and/or appended with non-word characters.",
+    "Regex string match and replace that honors boundaries for targets prepended and/or appended with non-word characters.",
   "license": "ISC",
   "author": "Buster Collings <busterc@gmail.com> (https://about.me/buster)",
   "repository": "busterc/boundary-match",
