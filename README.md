@@ -1,5 +1,7 @@
 # boundary-match [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/busterc/boundary-match.svg)](https://greenkeeper.io/)
+
 > Regex string match and replace that honors boundaries for targets prepended and/or appended with non-word characters.
 
 ## Installation
